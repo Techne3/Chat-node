@@ -3,7 +3,7 @@ module.exports = {
     getUsers: () => {
       const users = [
         {
-          username: "jon",
+          username: "bob",
           email: "jon@gmail.com",
         },
         {

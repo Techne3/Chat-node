@@ -1,10 +1,7 @@
 const { ApolloServer } = require("apollo-server");
 
-///////////  https://www.youtube.com/watch?v=Sz64p1Udwjk /////////////
+const { sequelize } = require("./models");
 
-// The GraphQL schema
-
-// A map of functions which return data for the schema.
 const resolvers = require("./graphql/resolvers");
 const typeDefs = require("./graphql/typeDefs");
 
@@ -15,4 +12,9 @@ const server = new ApolloServer({
 
 server.listen().then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
+
+  sequelize
+    .authenticate()
+    .then(() => console.log("Database connected!!"))
+    .catch((err) => console.log(err));
 });
