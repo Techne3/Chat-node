@@ -1,5 +1,7 @@
 const { ApolloServer } = require("apollo-server");
 
+// https://www.youtube.com/watch?v=aieNcEqCLHg
+
 const { sequelize } = require("./models");
 
 const resolvers = require("./graphql/resolvers");
